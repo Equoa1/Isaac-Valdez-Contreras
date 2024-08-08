@@ -22,6 +22,13 @@ const Product = sequelize.define('Product', {
     type: DataTypes.FLOAT,
     allowNull: false,
   },
+  price: {
+    type: DataTypes.FLOAT,
+    allowNull: false,
+  },
+}, {
+  tableName: 'catalog_products', 
+  timestamps: true, 
 });
 
 module.exports = Product;

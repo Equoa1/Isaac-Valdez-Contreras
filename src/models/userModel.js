@@ -8,10 +8,15 @@ const User = sequelize.define('User', {
   },
   phone: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   img_profile: {
     type: DataTypes.STRING,
+    allowNull: true,
+  },
+  password: { 
+    type: DataTypes.STRING,
+    allowNull: false,
   },
 });
 

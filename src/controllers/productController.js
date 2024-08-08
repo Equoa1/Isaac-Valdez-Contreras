@@ -17,6 +17,7 @@ exports.createProduct = async (req, res) => {
     height: Joi.number().required(),
     length: Joi.number().required(),
     width: Joi.number().required(),
+    price: Joi.number().required(),
   });
 
   const { error } = schema.validate(req.body);
@@ -29,6 +30,7 @@ exports.createProduct = async (req, res) => {
     res.status(201).json(product);
   } catch (error) {
     res.status(500).json({ message: 'Error al crear producto' });
+    console.error('Error al crear producto:', error);
   }
 };
 
