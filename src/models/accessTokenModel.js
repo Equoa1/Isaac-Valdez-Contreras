@@ -1,22 +1,20 @@
 const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/db');
-const User = require('./userModel');
+const { sequelize } = require('../config/db.js');
 
+// Define el modelo de AccessToken
 const AccessToken = sequelize.define('AccessToken', {
+  // ID del usuario asociado al token
   user_id: {
     type: DataTypes.INTEGER,
-    references: {
-      model: User,
-      key: 'id',
-    },
-    allowNull: false,
+    allowNull: false, // No puede ser nulo
   },
+  // Token de acceso
   token: {
-    type: DataTypes.STRING,
-    allowNull: false,
+    type: DataTypes.TEXT,
+    allowNull: false, // No puede ser nulo
   },
+}, {
+  tableName: 'access_tokens', // Nombre de la tabla en la base de datos
 });
 
-AccessToken.belongsTo(User, { foreignKey: 'user_id' });
-
-module.exports = AccessToken;
+module.exports = AccessToken; // Exporta el modelo para usarlo en otras partes de la aplicacion

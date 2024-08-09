@@ -1,23 +1,24 @@
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../config/db');
 
+// Define el modelo de User
 const User = sequelize.define('User', {
+  // Nombre del usuario
   name: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: false, // No puede ser nulo
   },
+  // Teléfono del usuario
   phone: {
     type: DataTypes.STRING,
-    allowNull: true,
+    allowNull: false, // No puede ser nulo
   },
+  // Imagen de perfil del usuario
   img_profile: {
     type: DataTypes.STRING,
-    allowNull: true,
   },
-  password: { 
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
+}, {
+  tableName: 'users', // Nombre de la tabla en la base de datos
 });
 
-module.exports = User;
+module.exports = User; // Exporta el modelo para usarlo en otras partes de la aplicacion
