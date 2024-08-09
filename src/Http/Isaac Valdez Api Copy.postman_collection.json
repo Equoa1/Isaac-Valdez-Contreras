@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "4f462483-ed8b-487e-b420-9f66c260a48b",
-		"name": "Isaac Valdez Api",
+		"_postman_id": "2b74b44d-0c19-471d-b191-dc35770c9fd5",
+		"name": "Isaac Valdez Api Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "37558998"
 	},
@@ -21,7 +21,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Isaac Valdez 20\",\n  \"phone\": \"6647085712\",\n  \"img_profile\": \"http://paginaweb/profile.jpg\"\n  \n}",
+							"raw": "{\n  \"name\": \"Isaac Valdez Contreras\",\n  \"phone\": \"6647085732\",\n  \"img_profile\": \"http://paginaweb/profile.jpg\"\n  \n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -29,14 +29,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4000/api/register",
+							"raw": "http://localhost:5000/api/auth/register",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "4000",
+							"port": "5000",
 							"path": [
 								"api",
+								"auth",
 								"register"
 							]
 						}
@@ -55,7 +56,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"phone\": \"6647085712\", \"name\": \"Isaac Valdez 20\"}",
+							"raw": "{\"phone\": \"6647085732\", \"name\": \"Isaac Valdez Contreras\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -93,7 +94,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzIzMjE3ODc4LCJleHAiOjE3MjMyMjE0Nzh9._aTJC6SmDeAgJqehj_0UmgRe3iU2QgVJ2lFY9ndGYSg"
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzIzMjMwMzA1LCJleHAiOjE3MjMyMzM5MDV9.pKOvlB_diYgpVds0VJ5vhPTE1ecCm2aKO_X3hQMbwhQ"
 									},
 									{
 										"key": "Content-Type",
@@ -102,7 +103,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "[\n           {\n             \"name\": \"Product 1\",\n             \"description\": \"Description 1\",\n             \"height\": 10,\n             \"length\": 20,\n             \"width\": 30\n           },\n           {\n             \"name\": \"Product 2\",\n             \"description\": \"Description 2\",\n             \"height\": 15,\n             \"length\": 25,\n             \"width\": 35\n           }\n         ]",
+									"raw": "[\n           {\n             \"name\": \"Lenovo Laptop\",\n             \"description\": \"Computadora Gamer Rtx3060\",\n             \"height\": 10,\n             \"length\": 20,\n             \"width\": 30\n           },\n           {\n             \"name\": \"Refrigerador Samsung\",\n             \"description\": \"Refrigerador Samsung\",\n             \"height\": 15,\n             \"length\": 25,\n             \"width\": 35\n           }\n         ]",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -132,7 +133,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzIzMjIxNjAzLCJleHAiOjE3MjMyMjUyMDN9.V3FYmZHxtrvo7x5Ug3_G-zPbxc20StwOWxJ8S2ABlxY",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzIzMjMwMzA1LCJleHAiOjE3MjMyMzM5MDV9.pKOvlB_diYgpVds0VJ5vhPTE1ecCm2aKO_X3hQMbwhQ",
 										"type": "text"
 									},
 									{
@@ -142,7 +143,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "[\n           { \"id\": 8,\n             \"name\": \"Product 1\",\n             \"description\": \"Description 1\",\n             \"height\": 10,\n             \"length\": 20,\n             \"width\": 30\n           },\n           { \"id\": 7,\n             \"name\": \"Product 2\",\n             \"description\": \"Description 2\",\n             \"height\": 15,\n             \"length\": 25,\n             \"width\": 35\n           }\n ]",
+									"raw": "[\n           { \"id\": 2,\n             \"name\": \"Mouse Gamer\",\n             \"description\": \"Gamer\",\n             \"height\": 10,\n             \"length\": 20,\n             \"width\": 30\n           },\n           { \"id\": 3,\n             \"name\": \"Teclado Gamer\",\n             \"description\": \"Gamer\",\n             \"height\": 15,\n             \"length\": 25,\n             \"width\": 35\n           }\n ]",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -172,7 +173,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzIzMjIxNjAzLCJleHAiOjE3MjMyMjUyMDN9.V3FYmZHxtrvo7x5Ug3_G-zPbxc20StwOWxJ8S2ABlxY"
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzIzMjMwMzA1LCJleHAiOjE3MjMyMzM5MDV9.pKOvlB_diYgpVds0VJ5vhPTE1ecCm2aKO_X3hQMbwhQ"
 									},
 									{
 										"key": "Content-Type",
@@ -181,7 +182,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "[\n  {\"id\": 1},\n  {\"id\": 2},\n  {\"id\": 3}\n]",
+									"raw": "[\n  \n  {\"id\": 2},\n  {\"id\": 3}\n]",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -213,7 +214,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzIzMTg0ODU2LCJleHAiOjE3MjMxODg0NTZ9.DgBF9rKvJhAv7f3lhR5PufQK7srnE0rVFkgeSBzLtWA"
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzIzMjMwMzA1LCJleHAiOjE3MjMyMzM5MDV9.pKOvlB_diYgpVds0VJ5vhPTE1ecCm2aKO_X3hQMbwhQ"
 							},
 							{
 								"key": "Content-Type",
@@ -222,7 +223,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"New Product\",\n  \"description\": \"A new product description\",\n  \"height\": 10.5,\n  \"length\": 15.0,\n  \"width\": 5.0\n}",
+							"raw": "{\n  \"name\": \"Computadora Lenovo\",\n  \"description\": \"Computadora De Escritorio\",\n  \"height\": 10.5,\n  \"length\": 15.0,\n  \"width\": 5.0\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -251,7 +252,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzIzMTg4NDYxLCJleHAiOjE3MjMxOTIwNjF9.tG5izqN7pFmWSkTcjXhlfu3BbMjfot1SaUlEzzefxVo"
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzIzMjMwMzA1LCJleHAiOjE3MjMyMzM5MDV9.pKOvlB_diYgpVds0VJ5vhPTE1ecCm2aKO_X3hQMbwhQ"
 							}
 						],
 						"url": {
@@ -285,7 +286,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{    \n    \"name\": \"Computador Hp\",\n    \"description\": \"Computador Laptop\",\n    \"height\": 11.5,\n    \"length\": 16,\n    \"width\": 6\n    \n}",
+							"raw": "{    \"id\": 1,\n    \"name\": \"Computador Hp\",\n    \"description\": \"Computador Laptop\",\n    \"height\": 11.5,\n    \"length\": 16,\n    \"width\": 6\n    \n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -293,7 +294,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/products/5",
+							"raw": "http://localhost:5000/api/products/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -302,7 +303,7 @@
 							"path": [
 								"api",
 								"products",
-								"5"
+								"1"
 							]
 						}
 					},
@@ -315,11 +316,11 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzIzMTgyODI5LCJleHAiOjE3MjMxODY0Mjl9.axQJEOZ_gY5fzJYbmsxlBXyL0bT6VqA2KPWe-uFfmIY"
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzIzMjMwMzA1LCJleHAiOjE3MjMyMzM5MDV9.pKOvlB_diYgpVds0VJ5vhPTE1ecCm2aKO_X3hQMbwhQ"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/api/products/2",
+							"raw": "http://localhost:5000/api/products/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -328,7 +329,7 @@
 							"path": [
 								"api",
 								"products",
-								"2"
+								"1"
 							]
 						}
 					},
