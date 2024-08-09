@@ -1,24 +1,24 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/db');
+const { DataTypes } = require('sequelize'); // importa DataTypes de sequelize para definir tipos de datos en los modelos
+const { sequelize } = require('../config/db'); // importa la instancia de sequelize configurada desde el archivo db.js
 
-// Define el modelo de User
+// define el modelo User asociado a la tabla 'users' en la base de datos
 const User = sequelize.define('User', {
-  // Nombre del usuario
+  // nombre del usuario
   name: {
-    type: DataTypes.STRING,
-    allowNull: false, // No puede ser nulo
+    type: DataTypes.STRING, // define el tipo de dato como string
+    allowNull: false, // establece que este campo es obligatorio
   },
-  // Teléfono del usuario
+  // teléfono del usuario
   phone: {
-    type: DataTypes.STRING,
-    allowNull: false, // No puede ser nulo
+    type: DataTypes.STRING, // define el tipo de dato como string
+    allowNull: false, // establece que este campo es obligatorio
   },
-  // Imagen de perfil del usuario
+  // imagen de perfil del usuario
   img_profile: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING, // define el tipo de dato como string
   },
 }, {
-  tableName: 'users', // Nombre de la tabla en la base de datos
+  tableName: 'users', // especifica el nombre de la tabla en la base de datos
 });
 
-module.exports = User; // Exporta el modelo para usarlo en otras partes de la aplicacion
+module.exports = User; // exporta el modelo User para que pueda ser utilizado en otras partes de la aplicación

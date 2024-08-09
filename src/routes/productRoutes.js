@@ -1,34 +1,28 @@
-const express = require('express');// Importa el módulo Express
+const express = require('express');// importa el modulo Express y importa las funciones
 const {
-  getProducts, // Importa la funcion para obtener todos los productos
-  createProduct,// Importa la funcioon para crear un nuevo producto
-  updateProduct,// Importa la funcion para actualizar un producto
-  deleteProduct,// Importa la función para eliminar un producto
-  createProductsBatch,// Importa la funcion para crear múltiples productos
-  updateProductsBatch,
-} = require('../controllers/productController'); // Importa las funciones del controlador de productos
-const auth = require('../middleware/authMiddleware');// Importa el middleware de autenticación para proteger las rutas
+  getProducts, 
+  createProduct,
+  updateProduct,
+  deleteProduct,
+  createProductsBatch,
+} = require('../controllers/productController'); 
+const auth = require('../middleware/authMiddleware');
 
 
-const router = express.Router();// Crea un nuevo enrutador de Express
+const router = express.Router();// crea un ruteador express
 
-// Obtener todos los productos
+// obtener todos los productos
 router.get('/products', auth, getProducts);
 
-// Crear un nuevo producto
+// crear un nuevo producto
 router.post('/products', auth, createProduct);
 
-// Actualizar un producto
+// actualizar un producto
 router.put('/products/:id', auth, updateProduct);
 
-// Eliminar un producto
+// eliminar un producto
 router.delete('/products/:id', auth, deleteProduct);
 
-// Crear multiples productos en batch
+// crear multiples productos en batch
 router.post('/products/batch', auth, createProductsBatch);
-
-const productController = require('../controllers/productController');
-router.put('/products/batch', auth, productController.updateProductsBatch);
-
-
 module.exports = router;

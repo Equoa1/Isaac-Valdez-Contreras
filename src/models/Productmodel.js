@@ -1,5 +1,6 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/db');
+
+const { DataTypes } = require('sequelize');// importa DataTypes de sequelize para definir tipos de datos en los modelos
+const { sequelize } = require('../config/db');// importa la instancia de sequelize configurada desde el archivo db.js
 
 // Define el modelo de Product
 const Product = sequelize.define('Product', {
@@ -29,8 +30,8 @@ const Product = sequelize.define('Product', {
     allowNull: false, // No puede ser nulo
   },
 }, {
-  tableName: 'catalog_products', // Nombre de la tabla en la base de datos
-  timestamps: true, // Agrega campos de timestamps (createdAt y updatedAt)
+  tableName: 'catalog_products', // nombre de la tabla
+  timestamps: true, // agrega campos de timestamps para que cuando se haga un registro marque el tiempo registrado
 });
 
-module.exports = Product; // Exporta el modelo para usarlo en otras partes de la aplicacion
+module.exports = Product; // cxporta el modelo para usarlo en otras partes de la aplicacion

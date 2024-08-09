@@ -1,37 +1,37 @@
-const express = require('express');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const User = require('../models/userModel');
-const AccessToken = require('../models/accessTokenModel'); // Verifica que esta ruta sea correcta
-const router = express.Router();
+const express = require('express'); // importa el modulo express para manejar rutas y solicitudes 
+const jwt = require('jsonwebtoken'); // importa jsonwebtoken para crear y verificar tokens JWT
+const User = require('../models/userModel'); // importa el modelo interactuar con la tabla 'users' en la base de datos
+const AccessToken = require('../models/accessTokenModel'); // importa el modelo AccessToken para interactuar con la tabla 'access_tokens' en la base de datos
+const router = express.Router(); // crea un enrutador de express para definir rutas y manejadores de solicitudes
 
-// Registro de usuarios
+
+// registro de usuarios
 router.post('/register', async (req, res) => {
   try {
     const { name, phone, img_profile } = req.body;
 
-    // Verifica que todos los campos requeridos estén presentes
+    // verifica que todos los campos requeridos estén presentes
     if (!name || !phone || !img_profile) {
       return res.status(400).json({ message: 'All fields are required' });
     }
 
-    // Verifica si el usuario ya existe
+    // verifica si el usuario ya existe
     const existingUser = await User.findOne({ where: { phone } });
     if (existingUser) {
       return res.status(400).json({ message: 'User already exists' });
     }
 
-    // Crea un nuevo usuario
+    // crea un nuevo usuario
     const user = await User.create({
       name,
       phone,
       img_profile,
     });
 
-    // Genera un token JWT
+    // genera un token JWT
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-    // Guarda el token en la tabla access_tokens
+    // guarda el token en la tabla access_tokens
     await AccessToken.create({ user_id: user.id, token });
 
     res.status(201).json({ token, user });
@@ -41,28 +41,28 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Inicio de sesion
+// inicio de sesion
 router.post('/login', async (req, res) => {
   try {
     const { phone, name } = req.body;
 
-    // Verifica que los campos requeridos estén presentes
+    // verifica que los campos requeridos estén presentes
     if (!phone || !name) {
       return res.status(400).json({ message: 'Phone and name are required' });
     }
 
-    // Busca al usuario por telefono y nombre
+    // busca al usuario por telefono y nombre
     const user = await User.findOne({ where: { phone, name } });
 
-    // Verifica si el usuario existe
+    // verifica si el usuario existe
     if (!user) {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
 
-    // Genera un token JWT
+    // genera un token JWT
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-    // Guarda el token en la tabla access_tokens
+    // guarda el token en la tabla access_tokens
     await AccessToken.create({ user_id: user.id, token });
 
     res.status(200).json({ token, user });
