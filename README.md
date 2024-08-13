@@ -1,5 +1,29 @@
 ## Descripción del Proyecto
 Este proyecto es una API para gestionar productos en una tienda de comercio electrónico. Permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en productos, así como operaciones en batch para actualización y eliminación.
+## Arquitectura del Proyecto
+```bash
+├── src
+│   ├── config
+│   │   ├── db.js                # Configuración de la base de datos
+│   ├── controllers
+│   │   ├── productController.js # Controladores para la gestión de productos
+│   ├── database
+│   │   ├── product_table (1).sql # Script SQL para la creación de la tabla de productos
+│   ├── middleware
+│   │   ├── authMiddleware.js    # Middleware para la autenticación
+│   ├── models
+│   │   ├── accessTokenModel.js  # Modelo para los tokens de acceso
+│   │   ├── Productmodel.js      # Modelo para los productos
+│   │   ├── userModel.js         # Modelo para los usuarios
+│   ├── routes
+│   │   ├── authRoutes.js        # Rutas de autenticación
+│   │   ├── productRoutes.js     # Rutas para la gestión de productos
+│   ├── test
+│   │   ├── test.js              # Archivo de pruebas para el proyecto
+├── .env                         # Archivo de variables de entorno
+├── app.js                       # Archivo principal de la aplicación
+
+```
 
 ## Requisitos Previos
 Antes de comenzar, asegúrate de tener los siguientes programas instalados en tu sistema
